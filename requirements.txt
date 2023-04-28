@@ -1,0 +1,3 @@
+angles==2.0.*
+numpy==1.24.2
+loguru==0.7.0
