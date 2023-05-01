@@ -12,9 +12,6 @@ jobs:
       - name: Generate SBOM
         run: |
           mkdir sbom_location
-          ls -a
-          ls ../ -a
-          ls ../../ -a
           curl -Lo $RUNNER_TEMP/sbom-tool https://github.com/microsoft/sbom-tool/releases/latest/download/sbom-tool-linux-x64
           chmod +x $RUNNER_TEMP/sbom-tool
           $RUNNER_TEMP/sbom-tool generate -b ./sbom_location -bc ${{ github.workspace }} -pn Test -pv 1.0.0 -ps 309SWEG -nsb https://sbom.mycompany.com
@@ -22,5 +19,5 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: SBOM_Download
-          path: sbom_location/_manifest
+          path: sbom_location/
       
