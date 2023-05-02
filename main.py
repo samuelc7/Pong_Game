@@ -5,12 +5,6 @@ from Player import Player
 from Ball import Ball
 from settings import *
 
-GAME_ON = False
-player1 = None
-bot = None
-ball = None
-after_listener_id = 0
-
 class PongGame():
     def __init__(self):
         self.game_on = False
